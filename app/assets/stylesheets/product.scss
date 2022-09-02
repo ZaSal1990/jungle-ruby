@@ -87,5 +87,10 @@
       font-weight: 700;
       text-align: center;
     }
+
+    button.disabled {
+      display: inline;
+      pointer-events: none;
+    }
   }
 }
