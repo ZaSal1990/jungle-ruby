@@ -1,0 +1,13 @@
+<h1>Categories Dashboard</h1>
+<h4>Categories available:</h4>
+<h5><% @categories.each do |category| %>
+  <ul>
+  <li><%= category.name %></li>
+  </ul>
+  <% end %>
+</h5>
+
+<div class="well">
+<%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
+</div>
+
