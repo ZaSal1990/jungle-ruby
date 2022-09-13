@@ -13,10 +13,14 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:create, :show]
 
-  # sign up page with form:
-	get 'users/new' => 'users#new', as: :new_user
-	# create (post) action for when sign up form is submitted:
-	post 'users' => 'users#create'
+  
+	get 'users/new' => 'users#new', as: :new_user # sign up page with form:
+	post 'users' => 'users#create' # create (post) action for when sign up form is submitted:
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
 
   namespace :admin do
     root to: 'dashboard#show'
